@@ -1,0 +1,21 @@
+<html>
+<body>
+<h2>EASTERN INTERNATIONAL UNIVERSITY</h2>
+<div *ngIf="user">
+  <p>
+    Your ID : {{user.username}} <br>
+    Your Name : {{user.fname}} <br>
+    Registration Number : {{user.room}} <br>
+    
+  </p>
+  <p>
+  
+  </p>
+</div>
+<script language="javascript" type="text/javascript">
+  var scrt_var = 10; 
+  </script>
+  <a href="http://localhost/getlink/index.php?id={{user.username}}={{user.fname}}" onclick="location.href=this.href+'?key='+scrt_var;return false;">Alternate Exam/Test Scheduling</a>
+</body>
+</html>
+

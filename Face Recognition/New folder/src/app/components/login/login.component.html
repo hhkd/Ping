@@ -1,0 +1,34 @@
+
+<h2>Login</h2>
+<md-input-container>
+  <input mdInput placeholder="Username" id="usernamebox"  [(ngModel)]="username">
+</md-input-container>
+<md-input-container>
+  <input mdInput placeholder="Subject" id="subjectbox" [(ngModel)]="subject">
+</md-input-container>
+<md-card class="login-method camera" [hidden]="loginMethod!=='camera'">
+    <md-card-content>
+        <img [hidden]="!imageUrl" [src]="imageUrl"/>	
+        <app-camera-snapshot [imageUrl]="imageUrl" (imageCreated)="imageChanged($event)"></app-camera-snapshot>
+    </md-card-content>
+</md-card>
+<md-card class="login-method upload" [hidden]="loginMethod!=='upload'">
+    <md-card-content>
+        <img [hidden]="!imageUrl" [src]="imageUrl"/>	
+        <app-image-picker [imageUrl]="imageUrl" (imagePicked)="imageChanged($event)"></app-image-picker>	
+    </md-card-content>
+</md-card>
+<md-card class="login-method password" [hidden]="loginMethod!=='password'">
+    <md-card-content>	
+        <md-input-container>
+        <input mdInput placeholder="Password" type="password"  [(ngModel)]="password">
+        </md-input-container>
+    </md-card-content>	
+</md-card>
+<div class="buttons">
+  <button md-raised-button color="primary" (click)="login()">Login</button>
+</div>
+<p>
+    Got no account ? Go and <a [routerLink]="['/register']">Register</a>!
+</p>
+<script type="text/javascript" src="C:\Users\DuyHo\Desktop\New folder (2)\server\server.js"></script>
